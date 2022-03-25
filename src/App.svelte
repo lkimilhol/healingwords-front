@@ -1,9 +1,10 @@
 <script>
 	import { onMount } from "svelte";
-	import { apiData, drinkNames } from './store.js';
+	import { apiData, content } from './store.js';
 
 	onMount(async () => {
-	fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Bourbon")
+	fetch("http://localhost:8080")
+	.then(response => console.log(response))
 	.then(response => response.json())
 	.then(data => {
 			console.log(data);
@@ -16,11 +17,12 @@
 </script>
 
 <main>
-	<h1>Whiskey Drinks Menu</h1>
+	<h1>Test</h1>
 	<ul>
-	{#each $drinkNames as drinkName}
-		<li>{drinkName}</li>
-	{/each}
+	<!-- {#each $drinkNames as drinkName} -->
+		<!-- <li>{drinkName}</li> -->
+	<!-- {/each} -->
+	<li>{content}</li>
 	</ul>
 </main>
 
