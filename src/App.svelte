@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from "svelte";
-	import { apiData, content } from './store.js';
+	import { apiData, content } from './main.js';
 
 	onMount(async () => {
 	fetch("http://localhost:8080")
